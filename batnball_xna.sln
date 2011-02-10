@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "batnball_xna", "batnball_xna\batnball_xna\batnball_xna.csproj", "{ABC5CF54-92B0-4527-ABED-5175070C5221}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "batnball_xnaContent", "batnball_xna\batnball_xnaContent\batnball_xnaContent.contentproj", "{32F2D100-E126-4469-96F5-C4C8785D793B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ABC5CF54-92B0-4527-ABED-5175070C5221}.Debug|x86.ActiveCfg = Debug|x86
+		{ABC5CF54-92B0-4527-ABED-5175070C5221}.Debug|x86.Build.0 = Debug|x86
+		{ABC5CF54-92B0-4527-ABED-5175070C5221}.Release|x86.ActiveCfg = Release|x86
+		{ABC5CF54-92B0-4527-ABED-5175070C5221}.Release|x86.Build.0 = Release|x86
+		{32F2D100-E126-4469-96F5-C4C8785D793B}.Debug|x86.ActiveCfg = Debug|x86
+		{32F2D100-E126-4469-96F5-C4C8785D793B}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
