@@ -54,6 +54,11 @@ namespace batnball_xna
                     y += speed * (float)gameTime.ElapsedGameTime.Milliseconds / 1000f;
                 }
             }
+
+            if (y < 0)
+                y = 0;
+            if (y + 150 > 480)
+                y = 480 - 150;
         }
 
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
