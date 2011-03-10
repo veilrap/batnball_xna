@@ -43,6 +43,14 @@ namespace batnball_xna
             }
         }
 
+        public void CheckCollision(Bat bat)
+        {
+            if ((x < bat.x + 30 && x + 30 > bat.x) && (y < bat.y + 150 && y + 30 > bat.y))
+            {
+                speedX *= -1f;
+            }
+        }
+
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
             spriteBatch.Begin();

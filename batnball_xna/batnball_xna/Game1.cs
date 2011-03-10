@@ -84,6 +84,9 @@ namespace batnball_xna
             batRight.Update(gameTime);
             ball.Update(gameTime);
 
+            ball.CheckCollision(batLeft);
+            ball.CheckCollision(batRight);
+
             base.Update(gameTime);
         }
 
