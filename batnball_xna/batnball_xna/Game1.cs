@@ -53,7 +53,7 @@ namespace batnball_xna
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
-            ball = new Ball(200, 100, 150, 175, Content.Load<Texture2D>("ball"));
+            ball = new Ball(200, 100, 150, 175, Content.Load<Texture2D>("ball"), Content.Load<SpriteFont>("Font"));
             batLeft = new Bat(10, 10, 175, 1, Content.Load<Texture2D>("bat"));
             batRight = new Bat(760, 10, 175, 2, Content.Load<Texture2D>("bat"));
         }

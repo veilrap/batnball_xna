@@ -19,13 +19,19 @@ namespace batnball_xna
         //Ball is radius 15, treat collisions as rectangle 30x30 for ease
         Texture2D ballTexture;
 
-        public Ball(float startX, float startY, float startSpeedX, float startSpeedY, Texture2D startTexture)
+        public int scoreLeft = 0;
+        public int scoreRight = 0;
+
+        SpriteFont scoreFont;
+
+        public Ball(float startX, float startY, float startSpeedX, float startSpeedY, Texture2D startTexture, SpriteFont Font)
         {
             x = startX;
             y = startY;
             speedX = startSpeedX;
             speedY = startSpeedY;
             ballTexture = startTexture;
+            scoreFont = Font;
         }
 
         public void Update(GameTime gameTime)
@@ -36,6 +42,14 @@ namespace batnball_xna
             if (x > 770 || x < 0)
             {
                 speedX *= -1f;
+                if (x > 770)
+                {
+                    scoreLeft++;
+                }
+                if (x < 0)
+                {
+                    scoreRight++;
+                }
             }
             if (y > 450 || y < 0)
             {
@@ -55,6 +69,8 @@ namespace batnball_xna
         {
             spriteBatch.Begin();
             spriteBatch.Draw(ballTexture, new Vector2(x, y), Color.White);
+            spriteBatch.DrawString(scoreFont, scoreLeft.ToString(), new Vector2(50, 10), Color.White);
+            spriteBatch.DrawString(scoreFont, scoreRight.ToString(), new Vector2(680, 10), Color.White);
             spriteBatch.End();
         }
     }
