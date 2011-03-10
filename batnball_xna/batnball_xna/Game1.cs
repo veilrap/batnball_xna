@@ -19,6 +19,8 @@ namespace batnball_xna
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
+        Ball ball;
+
         public Game1()
         {
             //Default 480p - 800px by 480px
@@ -49,6 +51,7 @@ namespace batnball_xna
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
+            ball = new Ball(200, 100, 125, 130, Content.Load<Texture2D>("ball"));
         }
 
         /// <summary>
@@ -73,6 +76,7 @@ namespace batnball_xna
                 this.Exit();
 
             // TODO: Add your update logic here
+            ball.Update(gameTime);
 
             base.Update(gameTime);
         }
@@ -86,6 +90,7 @@ namespace batnball_xna
             GraphicsDevice.Clear(Color.Black);
 
             // TODO: Add your drawing code here
+            ball.Draw(gameTime, spriteBatch);
 
             base.Draw(gameTime);
         }
