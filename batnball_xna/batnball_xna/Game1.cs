@@ -20,6 +20,8 @@ namespace batnball_xna
         SpriteBatch spriteBatch;
 
         Ball ball;
+        Bat batLeft;
+        Bat batRight;
 
         public Game1()
         {
@@ -51,7 +53,9 @@ namespace batnball_xna
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
-            ball = new Ball(200, 100, 125, 130, Content.Load<Texture2D>("ball"));
+            ball = new Ball(200, 100, 150, 175, Content.Load<Texture2D>("ball"));
+            batLeft = new Bat(10, 10, 175, 1, Content.Load<Texture2D>("bat"));
+            batRight = new Bat(760, 10, 175, 2, Content.Load<Texture2D>("bat"));
         }
 
         /// <summary>
@@ -76,6 +80,8 @@ namespace batnball_xna
                 this.Exit();
 
             // TODO: Add your update logic here
+            batLeft.Update(gameTime);
+            batRight.Update(gameTime);
             ball.Update(gameTime);
 
             base.Update(gameTime);
@@ -90,6 +96,8 @@ namespace batnball_xna
             GraphicsDevice.Clear(Color.Black);
 
             // TODO: Add your drawing code here
+            batLeft.Draw(gameTime, spriteBatch);
+            batRight.Draw(gameTime, spriteBatch);
             ball.Draw(gameTime, spriteBatch);
 
             base.Draw(gameTime);
