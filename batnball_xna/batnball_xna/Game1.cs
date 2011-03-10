@@ -19,10 +19,6 @@ namespace batnball_xna
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        Bat batLeft;
-        Bat batRight;
-        Ball ball;
-
         public Game1()
         {
             //Default 480p - 800px by 480px
@@ -53,9 +49,6 @@ namespace batnball_xna
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
-            batLeft = new Bat(10,10,1,Content.Load<Texture2D>("bat"));
-            batRight = new Bat(760, 10, 2, Content.Load<Texture2D>("bat"));
-            ball = new Ball(400, 240, 150, 175, Content.Load<Texture2D>("ball"), Content.Load<SpriteFont>("Font"));
         }
 
         /// <summary>
@@ -80,12 +73,6 @@ namespace batnball_xna
                 this.Exit();
 
             // TODO: Add your update logic here
-            batLeft.Update(gameTime);
-            batRight.Update(gameTime);
-            ball.Update(gameTime);
-            //Check Bat and Ball collisions!
-            ball.CheckCollision(batLeft);
-            ball.CheckCollision(batRight);
 
             base.Update(gameTime);
         }
@@ -96,12 +83,9 @@ namespace batnball_xna
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.Black);
 
             // TODO: Add your drawing code here
-            batLeft.Draw(gameTime, spriteBatch);
-            batRight.Draw(gameTime, spriteBatch);
-            ball.Draw(gameTime, spriteBatch);
 
             base.Draw(gameTime);
         }
