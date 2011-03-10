@@ -69,8 +69,8 @@ namespace batnball_xna
         {
             spriteBatch.Begin();
             spriteBatch.Draw(ballTexture, new Vector2(x, y), Color.White);
-            spriteBatch.DrawString(scoreFont, scoreLeft.ToString(), new Vector2(50, 10), Color.White);
-            spriteBatch.DrawString(scoreFont, scoreRight.ToString(), new Vector2(680, 10), Color.White);
+            spriteBatch.DrawString(scoreFont, scoreLeft.ToString(), new Vector2(50, 10), Color.Red);
+            spriteBatch.DrawString(scoreFont, scoreRight.ToString(), new Vector2(680, 10), Color.Blue);
             spriteBatch.End();
         }
     }

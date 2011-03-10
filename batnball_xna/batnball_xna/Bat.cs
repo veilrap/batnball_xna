@@ -59,7 +59,10 @@ namespace batnball_xna
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
             spriteBatch.Begin();
-            spriteBatch.Draw(batTexture, new Vector2(x, y), Color.White);
+            if(player == 1)
+                spriteBatch.Draw(batTexture, new Vector2(x, y), Color.Red);
+            if (player == 2)
+                spriteBatch.Draw(batTexture, new Vector2(x, y), Color.Blue);
             spriteBatch.End();
         }
     }
